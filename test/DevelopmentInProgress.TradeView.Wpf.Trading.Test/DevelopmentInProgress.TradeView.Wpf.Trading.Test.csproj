@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="Prism.Core" Version="7.2.0.1422" />
+    <PackageReference Include="System.Reactive" Version="4.4.1" />
+    <PackageReference Include="System.Reactive.Linq" Version="4.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DevelopmentInProgress.TradeView.Core\DevelopmentInProgress.TradeView.Core.csproj" />
+    <ProjectReference Include="..\..\src\DevelopmentInProgress.TradeView.Wpf.Common\DevelopmentInProgress.TradeView.Wpf.Common.csproj" />
+    <ProjectReference Include="..\..\src\DevelopmentInProgress.TradeView.Wpf.Trading\DevelopmentInProgress.TradeView.Wpf.Trading.csproj" />
+    <ProjectReference Include="..\DevelopmentInProgress.TradeView.Test.Helper\DevelopmentInProgress.TradeView.Test.Helper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="UserAccounts.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

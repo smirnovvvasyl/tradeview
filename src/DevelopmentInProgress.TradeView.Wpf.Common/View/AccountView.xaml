@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="DevelopmentInProgress.TradeView.Wpf.Common.View.AccountView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ViewModel="clr-namespace:DevelopmentInProgress.TradeView.Wpf.Common.ViewModel"
+             xmlns:View="clr-namespace:DevelopmentInProgress.TradeView.Wpf.Common.View">
+    <UserControl.Resources>
+
+        <DataTemplate DataType="{x:Type ViewModel:AccountBalancesViewModel}">
+            <View:AccountBalancesView></View:AccountBalancesView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:OrdersViewModel}">
+            <View:OrdersView></View:OrdersView>
+        </DataTemplate>
+
+    </UserControl.Resources>
+    <Grid Grid.Row="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="55*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Column="0" LastChildFill="True">
+            <ContentControl Content="{Binding AccountBalancesViewModel}"/>
+        </DockPanel>
+
+        <GridSplitter Grid.Column="1" Width="2" VerticalAlignment="Stretch" ResizeDirection="Columns" ResizeBehavior="PreviousAndNext"/>
+
+        <DockPanel Grid.Column="2" LastChildFill="True">
+            <ContentControl Content="{Binding OrdersViewModel}"/>
+        </DockPanel>
+    </Grid>
+</UserControl>
